@@ -2,6 +2,20 @@
 
 Add barcodes to your Vue application super easily with VueBarcode!
 
+Supporting:
+`CODE128`
+`EAN`
+`EAN-13`
+`EAN-8`
+`EAN-5`
+`EAN-2`
+`UPC (A)`
+`CODE39`
+`ITF-14`
+`MSI`
+`Pharmacode`
+`Codabar`
+
 It is a light wrapper for the [JsBarcode](https://github.com/lindell/JsBarcode) barcode library.
 
 ## Install
