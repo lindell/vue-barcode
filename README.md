@@ -23,7 +23,27 @@ It is a light wrapper for the [JsBarcode](https://github.com/lindell/JsBarcode) 
 npm install vue-barcode
 ````
 
-## Use / Example
+## Use
+#### 1. Add VueBarcode as a component
+
+````javascript
+import VueBarcode from 'vue-barcode';
+
+new Vue({
+  components: {
+    'barcode': VueBarcode
+  }
+})
+````
+#### 2. Use it
+
+````html
+<barcode value="value-to-render" format="barcode-format" ...more options>
+  Show this if the rendering fails.
+</barcode>
+````
+
+## Example
 Simple example with input binding. [Try it out with this JsFiddle!](http://jsfiddle.net/hfgan035/4/)
 ````html
 <div id="app">
