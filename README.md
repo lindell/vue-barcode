@@ -2,7 +2,7 @@
 
 Add barcodes to your Vue application super easily with VueBarcode!
 
-Supporting:
+Supported barcode formats:
 `CODE128`
 `EAN`
 `EAN-13`
@@ -51,7 +51,6 @@ var app = new Vue({
 # Options
 All options:
 
-`value`
 `format`
 `width`
 `height`
