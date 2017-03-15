@@ -1,6 +1,6 @@
 # VueBarcode
 
-Add barcodes to your Vue application super easily with VueBarcode!
+Add barcodes to your Vue application super easily with VueBarcode! [Try it out!](http://jsfiddle.net/hfgan035/4/)
 
 Supported barcode formats:
 `CODE128`
