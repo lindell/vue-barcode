@@ -1,13 +1,12 @@
 var JsBarcode = require('jsbarcode');
 
 var VueBarcode = {
-  template: `
-  <div>
-    <svg class="vue-barcode-element" v-show="valid"></svg>
-    <div v-show="!valid">
-      <slot></slot>
-    </div>
-   </div>`,
+  template: '<div>' +
+    '<svg class="vue-barcode-element" v-show="valid"></svg>'+
+    '<div v-show="!valid">'+
+      '<slot></slot>'+
+    '</div>'+
+    '</div>',
   props: {
     value: [String, Number],
     format: [String],
@@ -38,6 +37,7 @@ var VueBarcode = {
 };
 
 function render(){
+  var that = this;
   JsBarcode(this.$el.querySelector('.vue-barcode-element'), this.value, {
     format: this.format,
     height: this.height,
@@ -56,8 +56,8 @@ function render(){
     marginBottom: this.marginBottom,
     marginLeft: this.marginLeft,
     marginRight: this.marginRight,
-    valid: valid => {
-      this.valid = valid;
+    valid: function (valid) {
+      that.valid = valid;
     }
   });
 }
