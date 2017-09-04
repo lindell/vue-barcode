@@ -26,6 +26,7 @@ var VueBarcode = {
     marginBottom: [String, Number],
     marginLeft: [String, Number],
     marginRight: [String, Number],
+    displayValue: [String, Boolean],
   },
   mounted: function(){
     this.$watch('$props', render, { deep: true, immediate: true });
@@ -56,6 +57,7 @@ function render(){
     marginBottom: this.marginBottom,
     marginLeft: this.marginLeft,
     marginRight: this.marginRight,
+    displayValue: this.displayValue,
     valid: function (valid) {
       that.valid = valid;
     }
