@@ -38,7 +38,8 @@ var VueBarcode = {
 
 function render(){
   var that = this;
-  JsBarcode(this.$el.querySelector('.vue-barcode-element'), this.value, {
+
+  var settings = {
     format: this.format,
     height: this.height,
     width: this.width,
@@ -59,7 +60,19 @@ function render(){
     valid: function (valid) {
       that.valid = valid;
     }
-  });
+  };
+
+  removeUndefinedProps(settings);
+
+  JsBarcode(this.$el.querySelector('.vue-barcode-element'), this.value, settings);
+}
+
+function removeUndefinedProps(obj) {
+  for (var prop in obj) {
+    if (obj.hasOwnProperty(prop) && obj[prop] === undefined) {
+      delete obj[prop];
+    }
+  }
 }
 
 module.exports = VueBarcode;
