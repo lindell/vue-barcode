@@ -26,7 +26,10 @@ var VueBarcode = {
     marginBottom: [String, Number],
     marginLeft: [String, Number],
     marginRight: [String, Number],
-    displayValue: [String, Boolean]
+    displayValue: {
+      type:  [String, Boolean],
+      default: true
+    }
   },
   mounted: function(){
     this.$watch('$props', render, { deep: true, immediate: true });
