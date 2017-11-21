@@ -26,6 +26,10 @@ var VueBarcode = {
     marginBottom: [String, Number],
     marginLeft: [String, Number],
     marginRight: [String, Number],
+    displayValue: {
+      type:  [String, Boolean],
+      default: true
+    }
   },
   mounted: function(){
     this.$watch('$props', render, { deep: true, immediate: true });
@@ -59,7 +63,8 @@ function render(){
     marginRight: this.marginRight,
     valid: function (valid) {
       that.valid = valid;
-    }
+    },
+    displayValue: this.displayValue
   };
 
   removeUndefinedProps(settings);
