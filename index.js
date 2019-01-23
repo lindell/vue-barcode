@@ -3,7 +3,7 @@ var JsBarcode = require('jsbarcode');
 var VueBarcode = {
    render: function (createElement) {
     return createElement('div', [
-      createElement('svg', {
+      createElement(this.elementTag, {
         style: { display: this.valid ? undefined : 'none' },
         'class': ['vue-barcode-element']
       }),
@@ -34,6 +34,13 @@ var VueBarcode = {
     displayValue: {
       type:  [String, Boolean],
       default: true
+    },
+    elementTag: {
+      type: String,
+      default: 'svg',
+      validator: function (value) {
+          return ['canvas', 'svg', 'img'].indexOf(value) !== -1
+      }
     }
   },
   mounted: function(){
@@ -69,12 +76,13 @@ function render(){
     valid: function (valid) {
       that.valid = valid;
     },
-    displayValue: this.displayValue
+    displayValue: this.displayValue,
+    elementTag: this.elementTag
   };
 
   removeUndefinedProps(settings);
 
-  JsBarcode(this.$el.querySelector('.vue-barcode-element'), this.value, settings);
+  JsBarcode(this.$el.querySelector('.vue-barcode-element'), String(this.value), settings);
 }
 
 function removeUndefinedProps(obj) {
