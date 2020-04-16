@@ -17,6 +17,10 @@ var VueBarcode = {
     format: [String],
     width: [String, Number],
     height: [String, Number],
+    displayValue: {
+      type:  [String, Boolean],
+      default: true
+    },
     text: [String, Number],
     fontOptions : [String],
     font: [String],
@@ -31,10 +35,7 @@ var VueBarcode = {
     marginBottom: [String, Number],
     marginLeft: [String, Number],
     marginRight: [String, Number],
-    displayValue: {
-      type:  [String, Boolean],
-      default: true
-    },
+    flat: [Boolean],
     elementTag: {
       type: String,
       default: 'svg',
@@ -57,8 +58,9 @@ function render(){
 
   var settings = {
     format: this.format,
-    height: this.height,
     width: this.width,
+    height: this.height,
+    displayValue: this.displayValue,
     text: this.text,
     fontOptions: this.fontOptions,
     font: this.font,
@@ -73,10 +75,10 @@ function render(){
     marginBottom: this.marginBottom,
     marginLeft: this.marginLeft,
     marginRight: this.marginRight,
+    flat: this.flat,
     valid: function (valid) {
       that.valid = valid;
     },
-    displayValue: this.displayValue,
     elementTag: this.elementTag
   };
 
