@@ -36,6 +36,7 @@ var VueBarcode = {
     marginLeft: [String, Number],
     marginRight: [String, Number],
     flat: [Boolean],
+    ean128: [String, Boolean],
     elementTag: {
       type: String,
       default: 'svg',
@@ -76,6 +77,7 @@ function render(){
     marginLeft: this.marginLeft,
     marginRight: this.marginRight,
     flat: this.flat,
+    ean128: this.ean128,
     valid: function (valid) {
       that.valid = valid;
     },
