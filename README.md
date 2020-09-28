@@ -89,6 +89,7 @@ All options:
 `margin-left`
 `margin-right`
 `display-value`
+`ean128`
 
 
 For more information, see the [JsBarcode documentation](https://github.com/lindell/JsBarcode/wiki/Options).
